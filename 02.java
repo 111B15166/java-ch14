@@ -1,20 +1,20 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-public class J02 {
+public class Ex02 {
     public static void main(String[] args) {
-        char data[] = new char[128];
+        BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
+        String str = ""; 
+
         try {
-            FileReader fr = new FileReader("C:\\新增資料夾\\knowledge is power.txt");
-            int num = fr.read(data);
-            System.out.println("Characters read = " + num);
-
-            String str = new String(data).toUpperCase();
-            System.out.println(str);
-
-            fr.close();
+            System.out.print("Input a string: ");
+            str = buf.readLine(); 
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        String upperCaseStr = str.toUpperCase();
+        System.out.println("Uppercase string = " + upperCaseStr);
     }
 }
-
